@@ -53,7 +53,8 @@ export class TitleScreen {
                 description: "Go back to the main menu",
                 handler: () => {
                     this.showInitialScreen(resolve);
-                }
+                },
+                isBackButton: true
             }
         ];
     }
@@ -66,7 +67,7 @@ export class TitleScreen {
         //Create the Title Text
         const title = document.createElement("div");
         title.classList.add("title");
-        title.textContent = "PaperTrails";
+        title.textContent = "Patch Partners";
         this.element.appendChild(title);
 
         //Create Options container
@@ -93,9 +94,13 @@ export class TitleScreen {
     //Set up all the buttons/options
     setOptions(options) {
         this.optionsContainer.innerHTML = ""; // Clear existing options
+
         options.forEach(option => {
             const optionElement = document.createElement("div");
             optionElement.classList.add("option");
+            if (option.isBackButton) {
+                optionElement.classList.add("back-button");
+            }
             optionElement.textContent = option.label;
             optionElement.addEventListener("click", option.handler);
             this.optionsContainer.appendChild(optionElement);
@@ -126,9 +131,7 @@ export class TitleScreen {
 
     clearRightSide() {
         const pinkBox = this.rightSideElement.querySelector(".pinkBox");
-        if (pinkBox) {
-            pinkBox.innerHTML = ""; // Clear the content inside the pink box
-        }
+        pinkBox.remove();
     }
 
     close() {

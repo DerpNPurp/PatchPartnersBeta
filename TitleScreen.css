@@ -38,7 +38,7 @@ body, html {
     font-weight: 400;
     font-style: normal;
 
-    color: #A6B8E8;
+    color: #00A3FF;
     text-shadow: 1px 1px 2px black;
 
 
@@ -63,6 +63,7 @@ body, html {
     text-align: center;
     background-color: #A6B8E8;
     font-family: Arial, sans-serif;
+    opacity: 70%;
 }
 
 .TitleScreen .option:hover {

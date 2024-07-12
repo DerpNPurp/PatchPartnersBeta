@@ -17,6 +17,7 @@ export class TitleScreen {
                 description: "Press to view the tutorial",
                 handler: () => {
                     this.showTutorial();
+                    this.close();
                 }
             }
         ];
@@ -115,6 +116,7 @@ export class TitleScreen {
         this.setOptions(this.getNextOptions(resolve));
     }
 
+    //Temp function that shows you what option you chose
     showMessage(message) {
         this.clearRightSide();
         const messageElement = document.createElement("div");
@@ -122,6 +124,7 @@ export class TitleScreen {
         this.rightSideElement.appendChild(messageElement);
     }
 
+    //Temp function that shows you what option you chose
     showTutorial() {
         this.clearRightSide();
         const tutorialElement = document.createElement("div");
